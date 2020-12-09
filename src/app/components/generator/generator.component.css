@@ -1,0 +1,12 @@
+.intro{
+    display: flex;
+    align-items: row;
+    justify-content: space-between;
+}
+.intro img {
+    width: 4rem;
+    height: auto;
+}
+table, th, td {
+    border: 1px solid black;
+  }
