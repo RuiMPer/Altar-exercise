@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./code-display.component.css']
 })
 export class CodeDisplayComponent implements OnInit {
-  time:any
+  time: Date
   firstCodeNumber:number
   constructor() {
     this.time= new Date()

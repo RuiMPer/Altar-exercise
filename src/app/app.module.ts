@@ -8,9 +8,8 @@ import { GeneratorComponent } from './components/generator/generator.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridComponent } from './components/grid/grid.component';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { CodeDisplayComponent } from './components/code-display/code-display.component';
 
 @NgModule({
@@ -22,11 +21,13 @@ import { CodeDisplayComponent } from './components/code-display/code-display.com
     HomeComponent,
     GridComponent,
     CodeDisplayComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatGridListModule
+    MatGridListModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
