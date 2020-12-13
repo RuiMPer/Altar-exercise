@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
+import { GridService } from 'src/app/services/grid.service';
+import { GridComponent } from '../grid/grid.component';
 
 
 @Component({
@@ -7,17 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./generator.component.css']
 })
 export class GeneratorComponent implements OnInit {
-
-  constructor() {
-   
+  grid:any
+  message:string
+  constructor(private data:GridService) {
+    this.message=""
+    this.grid=new GridComponent
    }
 
   ngOnInit(): void {
-
+    
   }
 
   generateGrid() {
-    console.log("Grid")
+    console.log("ESTE",this.grid)
+    
   }
 
 }

@@ -1,6 +1,4 @@
-import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { concat } from 'rxjs';
 
 
 @Component({
@@ -13,9 +11,12 @@ export class GridComponent implements OnInit {
   time: Date
   squareContent: Array<String>
   characterArray:Array<String>
+
+  
   constructor() {
     this.grid = [
-      [0,1,2,3,4,5,6,7,8,9],
+      ["",0,1,2,3,4,5,6,7,8,9],
+      [0],
       [1],
       [2],
       [3],
@@ -40,10 +41,10 @@ export class GridComponent implements OnInit {
     return new Promise(()=> {
       let copySquareContent=this.squareContent
       let newGrid=this.grid
-      console.log(newGrid)
+      // console.log(newGrid)
       for(let l=1; l<this.grid.length;l++) {
         // console.log("this",l)
-        let arrayCopy = copySquareContent.splice(0,9)
+        let arrayCopy = copySquareContent.splice(0,10)
         // console.log("arraycopy",arrayCopy)
 
         let concatGrid = newGrid[l].concat(arrayCopy)
@@ -54,12 +55,12 @@ export class GridComponent implements OnInit {
   }
   getSquareContent() {
     j:Number
-    for(let j=0; j<=80; j++) {
+    for(let j=0; j<=99; j++) {
       let character = this.getRandomCharacter()
       this.squareContent.push(character)
     }
     
-    console.log("content",this.squareContent)
+    // console.log("content",this.squareContent)
   }
 
   getRandomCharacter() {

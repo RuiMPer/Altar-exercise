@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GridService } from 'src/app/services/grid.service';
 
 @Component({
   selector: 'app-code-display',
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class CodeDisplayComponent implements OnInit {
   time: Date
   firstCodeNumber:number
-  constructor() {
+  message:String
+  constructor(private data:GridService) {
     this.time= new Date()
     this.firstCodeNumber=0
+    this.message=""
    }
 
   ngOnInit(): void {
