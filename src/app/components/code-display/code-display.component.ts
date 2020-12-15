@@ -9,14 +9,16 @@ import { GridService } from 'src/app/services/grid.service';
 export class CodeDisplayComponent implements OnInit {
   time: Date
   firstCodeNumber:number
-  message:String
-  constructor(private data:GridService) {
+  grid:any
+  constructor(private gridService:GridService) {
     this.time= new Date()
     this.firstCodeNumber=0
-    this.message=""
    }
 
   ngOnInit(): void {
+    this.gridService.gridSource.subscribe(g => {
+      this.grid = g
+    })
     this.getCode()
   }
 
@@ -28,14 +30,26 @@ export class CodeDisplayComponent implements OnInit {
     console.log(seconds)
     
     //Get X and Y from the seconds
-    let x = String(seconds).charAt(0)
-    let y = String(seconds).charAt(1)
+    let firstNumber: any
+    let secondNumber: any
+    
+    if(seconds < 10) {
+      firstNumber = "0"
+      secondNumber = String(seconds).charAt(0)
+    } else {
+      firstNumber = String(seconds).charAt(0)
+      secondNumber = String(seconds).charAt(1)
+    }
 
+    console.log("x",firstNumber)
+    console.log("y",secondNumber)
+
+    console.log("grid",this.grid)
     //Get the letters on the position [x,y] [y,x]
-
-    let firstPosition = "V"
+    let firstPosition = this.grid[firstNumber][secondNumber]
     let secondPosition = "C"
 
+    console.log("firstPosition",firstPosition)
     //Count the occurences of the letters
   
     let firstPositionOccurence = 18
