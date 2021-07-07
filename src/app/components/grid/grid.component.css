@@ -1,0 +1,14 @@
+mat-grid-list {
+  position: relative;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding-top: 2.5rem;
+}
+
+mat-grid-tile {
+    background: lightblue;
+    width: auto;
+  }
